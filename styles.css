@@ -1,0 +1,12 @@
+.header {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 50px;
+    border: 1px solid rebeccapurple;
+}
+
+img {
+    padding: 5px 0;
+    background: #df1b1c;
+}
