@@ -87,6 +87,73 @@
             margin-bottom: 32px;
             max-width: 400px;
         }
+        .main {
+            box-sizing: border-box;
+            color: black;
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2.0rem;
+            background-size: cover;
+        }
+        .main .topic {
+            font-size: 30px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .main .container {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        .main .img__list {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-perspective-origin: center;
+            -moz-perspective-origin: center;
+            -ms-perspective-origin: center;
+            perspective-origin: center;
+        }
+        .main .list {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .main .list .item {
+            margin: 0.5rem;
+            font-size: 10px;
+            text-align: center;
+            -webkit-transition: -webkit-transform 500ms,filter 500ms;
+            -webkit-transition: transform 500ms,filter 500ms;
+            transition: transform 500ms,filter 500ms;
+            cursor: pointer;
+        }
+        .main .list .item img {
+            max-width: 480px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -99,6 +166,24 @@
             <div class="hd__container">
                 <div class="subtitle">九吉公老红糖 岂止与红糖 更在于有效 安全 原味</div>
                 <div class="description">九吉公老红糖 经得起时间的考验未失原味</div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="topic">老红糖</div>
+        <div class="container">
+            <div class="img__list">
+                <div class="list">
+                    <div class="item">
+                        <img src="images/red_suger_1.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="images/red_suger_2.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="images/red_suger_3.jpg">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
