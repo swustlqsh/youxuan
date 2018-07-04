@@ -7,35 +7,100 @@
         body {
             padding: 0;
             margin: 0;
+            overflow-x: hidden;
         }
         .header {
             position: relative;
             width: 100%;
+            height: 480px;
+            overflow: hidden;
             margin: 0;
             padding: 0;
-            height: auto;
+            box-sizing: border-box;
+            font-weight: 400;
+            font-size: 0.875em;
+            line-height: 1.71429;
+            font-family: ff-clan-web-pro,'Helvetica Neue',Helvetica,sans-serif;
         }
 
-        .header img {
+        .header .sc_img {
             position: absolute;
+            left: 0;
             top: 0;
-            height: 58px;
-            padding: 5px 0;
+            width: 100%;
+            object-fit: cover;
             background: #df1b1c;
         }
-        .header .banner {
-            background-image: url("./images/1508479216.jpg");
-            height: 480px;
+        .header .container {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .header .container .hd__logo {
+            position: absolute;
+            left: 0;
             top: 0;
+            width: 120px;
+            background-color: #df1b1c;
+        }
+        .header .hd__container {
+            max-width: 450px;
+            text-align: center;
+            margin-bottom: 32px;
+            margin-top: 8rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center
+        }
+        .header .hd__container .subtitle {
+            color: red;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .header .hd__container .description {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 32px;
+            max-width: 400px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="banner"></div>
-        <a href="./index.html">
-            <img src="images/logo.png">
-        </a>
+        <img class="sc_img" src="images/1508479216.jpg">
+        <div class="container">
+            <a href="./index.html">
+                <img class="hd__logo" src="images/logo.png">
+            </a>
+            <div class="hd__container">
+                <div class="subtitle">九吉公老红糖 岂止与红糖 更在于有效 安全 原味</div>
+                <div class="description">九吉公老红糖 经得起时间的考验未失原味</div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
