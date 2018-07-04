@@ -152,7 +152,36 @@
         .main .list .item img {
             max-width: 480px;
         }
-
+        .fixed__main {
+            height: 124px;
+            position: fixed;
+            right: 0;
+            bottom: 150px;
+            z-index: 9999;
+        }
+        .fixed__main #contact {
+            position: fixed;
+            width: 200px;
+            height: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 0 5px 9px rgba(4,0,0,.17);
+            box-shadow: 0 5px 9px rgba(4,0,0,.17);
+            right: 10px;
+        }
+        .fixed__main #contact .head {
+            padding: 20px;
+            line-height: 16px;
+            height: 16px;
+            border-radius: 0;
+            background: #df1b1c;
+            color: #fff;
+            font-size: 14px;
+        }
+        .fixed__main #contact .tel {
+            line-height: 18px;
+            font-size: 16px;
+            color: #929292;
+        }
 
     </style>
 </head>
@@ -187,5 +216,14 @@
             </div>
         </div>
     </div>
+    <div class="fixed__main">
+        <div id="contact" style="right: -1px;">
+            <div class="head">联系我们</div>
+            <div class="tel" style="text-align:center;">
+                <p>18717833280</p>
+                <p><img style="width:150px;height:150px;float:none" src="images/me-small.png"></p>
+            </div>
+    </div>
+   </div>
 </body>
 </html>
