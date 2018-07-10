@@ -99,6 +99,11 @@
             font-weight: 500;
             text-align: center;
         }
+        #description {
+            font-size: 18px;
+            font-weight: 200;
+            text-align: center;
+        }
         .main .container {
             position: relative;
             display: -webkit-box;
@@ -200,6 +205,7 @@
             height: 124px;
             position: fixed;
             right: 0;
+            bottom: 200px;
             z-index: 9999;
         }
         .fixed__main #contact {
@@ -228,7 +234,7 @@
         @media (min-width: 769px) {
             .ULkOS {
                 width: 560px;
-                height: 420px;
+                height: 820px;
             }
         }
 
@@ -250,6 +256,7 @@
     </div>
     <div class="main">
         <div class="topic">老红糖</div>
+        <p id="description">九吉公老红糖 经得起时间的考验未失原味</p>
         <div class="container">
             <div class="img__list">
                 <div class="list">
@@ -282,8 +289,14 @@
             cssMap[0] = [ 'gugOfH', 'cqhWdL', 'ltZmm' ]
             cssMap[1] = [ 'ioCpQl', 'gugOfH', 'cqhWdL' ]
             cssMap[2] = [ 'fVEpEl', 'ioCpQl', 'gugOfH' ]
+            var desMap = {
+                0: '九吉公承古法 秉匠心 老红糖历经千年却为失原味 对得起历史',
+                1: '看得见制作过程 方知手工老红糖的真谛',
+                2: '感谢岁月的打磨 把美好的味道留下 等待您的品尝'
+            }
             Array.prototype.forEach.call(query_class, function(el, value) {
                 el.addEventListener('click', function(e) {
+                    document.getElementById('description').innerHTML = desMap[value]
                     var nowCss = cssMap[value]
                     nowCss.forEach(function(css, j) {
                         query_class[j].className = 'item ' + css
