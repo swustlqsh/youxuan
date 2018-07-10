@@ -172,6 +172,26 @@
             -ms-transform: perspective(600px) translate3d(30%,0,-120px);
             transform: perspective(600px) translate3d(30%,0,-120px);
         }
+        .ioCpQl {
+            position: absolute;
+            -webkit-transition: -webkit-transform 1s;
+            -webkit-transition: transform 1s;
+            transition: transform 1s;
+            cursor: pointer;
+            -webkit-transform: perspective(600px) translate3d(-15%,0,-60px);
+            -ms-transform: perspective(600px) translate3d(-15%,0,-60px);
+            transform: perspective(600px) translate3d(-15%,0,-60px);
+        }
+        .fVEpEl {
+            position: absolute;
+            -webkit-transition: -webkit-transform 1s;
+            -webkit-transition: transform 1s;
+            transition: transform 1s;
+            cursor: pointer;
+            -webkit-transform: perspective(600px) translate3d(-30%,0,-120px);
+            -ms-transform: perspective(600px) translate3d(-30%,0,-120px);
+            transform: perspective(600px) translate3d(-30%,0,-120px);
+        }
         .main .list .item img {
             max-width: 600px;
             max-height: 800px;
@@ -207,8 +227,8 @@
         }
         @media (min-width: 769px) {
             .ULkOS {
-                width: 600px;
-                height: 800px;
+                width: 560px;
+                height: 420px;
             }
         }
 
@@ -219,7 +239,7 @@
     <div class="header">
         <img class="sc_img" src="images/1508479216.jpg">
         <div class="container">
-            <a href="./index.html">
+            <a href="./index.html"
                 <img class="hd__logo" src="images/logo.png">
             </a>
             <div class="hd__container">
@@ -255,5 +275,23 @@
             </div>
     </div>
    </div>
+    <script type="text/javascript">
+        window.onload = function() {
+            var query_class = document.querySelectorAll('div.item')
+            var cssMap = {}
+            cssMap[0] = [ 'gugOfH', 'cqhWdL', 'ltZmm' ]
+            cssMap[1] = [ 'ioCpQl', 'gugOfH', 'cqhWdL' ]
+            cssMap[2] = [ 'fVEpEl', 'ioCpQl', 'gugOfH' ]
+            Array.prototype.forEach.call(query_class, function(el, value) {
+                console.log(value)
+                el.addEventListener('click', function(e) {
+                    var nowCss = cssMap[value]
+                    nowCss.forEach(function(css, j) {
+                        query_class[j].className = 'item ' + css
+                    })
+                })
+            })
+        }
+    </script>
 </body>
 </html>
