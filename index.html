@@ -114,7 +114,7 @@
             -webkit-justify-content: center;
             -ms-flex-pack: center;
             justify-content: center;
-            min-height: 200px;
+            height: 820px;
         }
         .main .img__list {
             display: -webkit-box;
@@ -201,6 +201,53 @@
             max-width: 600px;
             max-height: 800px;
         }
+        .sc-fBuWsC {
+            box-sizing: border-box;
+        }
+        .iJLyqZ {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .klkqSs {
+            display: block;
+            width: 48px;
+            height: 48px;
+        }
+        .bMfRlj *, .bMfRlj *:before, .bMfRlj *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .dFJxuH {
+            margin: 0.5rem;
+            font-size: 10px;
+            text-align: center;
+            -webkit-transition: -webkit-transform 500ms,filter 500ms;
+            -webkit-transition: transform 500ms,filter 500ms;
+            transition: transform 500ms,filter 500ms;
+            cursor: pointer;
+        }
+        .izPZWx {
+            margin: 0.5rem;
+            font-size: 10px;
+            text-align: center;
+            -webkit-filter: brightness(300%);
+            filter: brightness(300%);
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-transition: -webkit-transform 500ms,filter 500ms;
+            -webkit-transition: transform 500ms,filter 500ms;
+            transition: transform 500ms,filter 500ms;
+            cursor: pointer;
+        }
         .fixed__main {
             height: 124px;
             position: fixed;
@@ -245,7 +292,7 @@
     <div class="header">
         <img class="sc_img" src="images/1508479216.jpg">
         <div class="container">
-            <a href="./index.html"
+            <a href="./index.html">
                 <img class="hd__logo" src="images/logo.png">
             </a>
             <div class="hd__container">
@@ -272,6 +319,20 @@
                 </div>
             </div>
         </div>
+        <div class="iJLyqZ">
+            <div class="sc-fBuWsC izPZWx">
+                <img class="sc-fMiknA klkqSs" src="images/small-1.png">
+                源于古法
+            </div>
+            <div class="sc-fBuWsC dFJxuH">
+                <img class="sc-fMiknA klkqSs" src="images/small-2.png">
+                手工熬制
+            </div>
+            <div class="sc-fBuWsC dFJxuH">
+                <img class="sc-fMiknA klkqSs" src="images/small-3.png">
+                时间味道
+            </div>
+        </div>
     </div>
     <div class="fixed__main">
         <div id="contact" style="right: -1px;">
@@ -284,7 +345,8 @@
    </div>
     <script type="text/javascript">
         window.onload = function() {
-            var query_class = document.querySelectorAll('div.item')
+            var query_item = document.querySelectorAll('div.item')
+            var query_image = document.querySelectorAll('div.sc-fBuWsC')
             var cssMap = {}
             cssMap[0] = [ 'gugOfH', 'cqhWdL', 'ltZmm' ]
             cssMap[1] = [ 'ioCpQl', 'gugOfH', 'cqhWdL' ]
@@ -294,12 +356,26 @@
                 1: '看得见制作过程 方知手工老红糖的真谛',
                 2: '感谢岁月的打磨 把美好的味道留下 等待您的品尝'
             }
-            Array.prototype.forEach.call(query_class, function(el, value) {
+
+            Array.prototype.forEach.call(query_item, function(el, value) {
                 el.addEventListener('click', function(e) {
-                    document.getElementById('description').innerHTML = desMap[value]
+                    document.getElementById('description').textContent = desMap[value]
                     var nowCss = cssMap[value]
                     nowCss.forEach(function(css, j) {
-                        query_class[j].className = 'item ' + css
+                        query_item[j].className = 'item ' + css
+                    })
+                })
+            })
+            Array.prototype.forEach.call(query_image, function(el, value) {
+                el.addEventListener('click', function(e) {
+                    el.className = 'sc-fBuWsC ' + 'izPZWx'
+                    document.getElementById('description').textContent = desMap[value]
+                    var nowCss = cssMap[value]
+                    nowCss.forEach(function(css, j) {
+                        query_item[j].className = 'item ' + css
+                        if (value != j) {
+                            query_image[j].className = 'sc-fBuWsC ' + 'dFJxuH'
+                        }
                     })
                 })
             })
