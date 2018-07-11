@@ -347,7 +347,11 @@
         window.onload = function() {
             var query_item = document.querySelectorAll('div.item')
             var query_image = document.querySelectorAll('div.sc-fBuWsC')
-            var cssMap = {}
+            var timer;
+            var index = 0;
+            var maxIndex = 2;
+            var orign = true;
+            var cssMap = {};
             cssMap[0] = [ 'gugOfH', 'cqhWdL', 'ltZmm' ]
             cssMap[1] = [ 'ioCpQl', 'gugOfH', 'cqhWdL' ]
             cssMap[2] = [ 'fVEpEl', 'ioCpQl', 'gugOfH' ]
@@ -361,24 +365,47 @@
                 el.addEventListener('click', function(e) {
                     document.getElementById('description').textContent = desMap[value]
                     var nowCss = cssMap[value]
+                    query_image[value].className = 'sc-fBuWsC ' + 'izPZWx';
                     nowCss.forEach(function(css, j) {
                         query_item[j].className = 'item ' + css
+                        if (value != j) {
+                            query_image[j].className = 'sc-fBuWsC ' + 'dFJxuH';
+                        }
                     })
                 })
             })
             Array.prototype.forEach.call(query_image, function(el, value) {
                 el.addEventListener('click', function(e) {
-                    el.className = 'sc-fBuWsC ' + 'izPZWx'
-                    document.getElementById('description').textContent = desMap[value]
-                    var nowCss = cssMap[value]
+                    if (timer) {
+                        timer = window.clearInterval(timer);
+                    }
+                    el.className = 'sc-fBuWsC ' + 'izPZWx';
+                    document.getElementById('description').textContent = desMap[value];
+                    var nowCss = cssMap[value];
                     nowCss.forEach(function(css, j) {
-                        query_item[j].className = 'item ' + css
+                        query_item[j].className = 'item ' + css;
                         if (value != j) {
-                            query_image[j].className = 'sc-fBuWsC ' + 'dFJxuH'
+                            query_image[j].className = 'sc-fBuWsC ' + 'dFJxuH';
                         }
                     })
                 })
             })
+            // timer
+            if (timer) {
+                timer = window.clearInterval(timer);
+            }
+            timer = window.setInterval(function() {
+                if (index >= maxIndex) {
+                    orign = false;
+                }
+                if (index <= 0) {
+                    orign = true;
+                }
+                index = orign ? index + 1 : index - 1;
+                query_item[index].click();
+
+            },2000)
+
         }
     </script>
 </body>
